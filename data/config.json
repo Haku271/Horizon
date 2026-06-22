@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "ai": {
+    "provider": "openai",
+    "provider_chain": null,
+    "model": "deepseek/deepseek-v4-pro",
+    "base_url": "https://runanytime.hxi.me/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 8192,
+    "throttle_sec": 0.0,
+    "analysis_concurrency": 4,
+    "enrichment_concurrency": 2,
+    "languages": ["zh"],
+    "azure_endpoint_env": null,
+    "api_version": null
+  },
+  "sources": {
+    "github": [
+      {
+        "type": "user_events",
+        "username": "karpathy",
+        "enabled": true
+      },
+      {
+        "type": "user_events",
+        "username": "sama",
+        "enabled": true
+      },
+      {
+        "type": "user_events",
+        "username": "gdb",
+        "enabled": true
+      },
+      {
+        "type": "user_events",
+        "username": "jeffdean",
+        "enabled": true
+      },
+      {
+        "type": "user_events",
+        "username": "ylecun",
+        "enabled": true
+      },
+      {
+        "type": "user_events",
+        "username": "jerryjliu0",
+        "enabled": true
+      },
+      { "type": "repo_releases", "owner": "openai", "repo": "openai-cookbook" }
+    ],
+    "hackernews": {
+      "enabled": false,
+      "fetch_top_stories": 50,
+      "min_score": 100
+    },
+    "rss": [
+      {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/atom/everything/",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "量子位",
+        "url": "https://wechat2rss.xlab.app/feed/7131b577c61365cb47e81000738c10d872685908.xml",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "新智元",
+        "url": "https://wechat2rss.xlab.app/feed/ede30346413ea70dbef5d485ea5cbb95cca446e7.xml",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "BAIR Blog",
+        "url": "https://bair.berkeley.edu/blog/feed.xml",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "Latent Space",
+        "url": "https://www.latent.space/feed",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "Interconnects",
+        "url": "https://www.interconnects.ai/feed",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "Machine Learning Mastery",
+        "url": "https://machinelearningmastery.com/feed/",
+        "enabled": true,
+        "category": ""
+      },
+      {
+        "name": "The Batch",
+        "url": "https://www.deeplearning.ai/the-batch/feed/",
+        "enabled": false,
+        "category": ""
+      },
+      {
+        "name": "The Gradient",
+        "url": "https://thegradient.pub/rss/",
+        "enabled": true,
+        "category": ""
+      }
+    ],
+    "reddit": {
+      "enabled": false,
+      "subreddits": [
+        {
+          "subreddit": "MachineLearning",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "LocalLLaMA",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "LLMDevs",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "artificial",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "ChatGPT",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "StableDiffusion",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        },
+        {
+          "subreddit": "learnmachinelearning",
+          "sort": "hot",
+          "fetch_limit": 25,
+          "min_score": 10
+        }
+      ],
+      "users": [],
+      "fetch_comments": 10
+    },
+    "telegram": {
+      "enabled": false,
+      "channels": []
+    },
+    "twitter": {
+      "enabled": true,
+      "users": [
+        "sama ",
+        "gdb ",
+        "darioamodei ",
+        "ylecun ",
+        "AndrewYNg ",
+        "karpathy ",
+        "bcherny",
+        "hwchase17",
+        "jerryjliu0",
+        "polynoamial",
+        "OpenAI",
+        "AnthropicAI"
+      ],
+      "fetch_limit": 10,
+      "fetch_reply_text": false,
+      "max_replies_per_tweet": 3,
+      "max_tweets_to_expand": 10,
+      "reply_min_likes": 5
+    },
+    "openbb": null,
+    "ossinsight": {
+      "enabled": true,
+      "period": "past_24_hours",
+      "languages": ["All", "Python", "TypeScript"],
+      "keywords": [],
+      "min_stars": 5,
+      "max_items": 30
+    }
+  },
+  "filtering": {
+    "ai_score_threshold": 3.0,
+    "time_window_hours": 24,
+    "max_items": null,
+    "category_groups": {},
+    "default_group": "other",
+    "default_group_limit": null
+  },
+  "email": null,
+  "webhook": {
+    "enabled": true,
+    "url_env": "HORIZON_WEBHOOK_URL",
+    "platform": "feishu",
+    "layout": "collapsible",
+    "fallback_layout": "markdown",
+    "languages": ["zh"]
+  }
+}
