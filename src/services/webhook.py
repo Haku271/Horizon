@@ -628,21 +628,22 @@ class WebhookNotifier:
         except (json.JSONDecodeError, ValueError):
             return None
 
-        platform = self.config.platform
+        platform = (self.config.platform or "").lower()
+        check_all = platform in ("", "generic")
 
-        if platform in ("feishu", "lark"):
+        if platform in ("feishu", "lark") or check_all:
             code = data.get("code") or data.get("StatusCode")
             if code is not None and code != 0:
                 msg = data.get("msg") or data.get("StatusMessage") or ""
                 return f"Feishu/Lark error (code={code}): {msg}"
 
-        elif platform == "dingtalk":
+        if platform == "dingtalk" or check_all:
             errcode = data.get("errcode")
             if errcode is not None and errcode != 0:
                 msg = data.get("errmsg") or ""
                 return f"DingTalk error (errcode={errcode}): {msg}"
 
-        elif platform in ("slack", "discord"):
+        if platform in ("slack", "discord") or check_all:
             if data.get("ok") is False:
                 error = data.get("error") or ""
                 return f"Slack/Discord error: {error}"
